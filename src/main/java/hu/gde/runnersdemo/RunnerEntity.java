@@ -58,7 +58,7 @@ public class RunnerEntity {
         return laptimes;
     }
 
-    public List<ShoeNameEntity> getShoeNames() {
-        return getShoeNames();
+    public List<ShoeNameEntity> getShoes() {
+        return shoes;
     }
 }

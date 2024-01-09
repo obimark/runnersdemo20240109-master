@@ -44,13 +44,13 @@ public class RunnerController {
     }
 
 
-    @GetMapping("/runner/{id}")
+    @GetMapping("/runner/shoes/{id}")
     public String getRunnerShoeById(@PathVariable Long runnerId, Model model) {
         RunnerEntity runner = runnerRepository.findById(runnerId).orElse(null);
         if (runner != null) {
-            List<ShoeNameEntity> shoeNames = runner.getShoeNames();
+            List<ShoeNameEntity> shoeNames = runner.getShoes();
             if (shoeNames != null) {
-                model.addAttribute("shoe", runner.getShoeNames());
+                model.addAttribute("shoe", runner.getShoes());
             } else {
                 model.addAttribute("shoe", "No shoe info found");
             }
@@ -60,8 +60,6 @@ public class RunnerController {
             return "error";
         }
     }
-
-
 
 
 
