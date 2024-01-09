@@ -61,6 +61,19 @@ public class RunnerRestController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Runner with ID " + id + " not found");
         }
     }
+
+    // getBiggestFoot metódus meghívása
+    @GetMapping("/foot")
+    public ResponseEntity<String> getBiggestFoot() {
+        RunnerEntity getBiggestFoot = RunnerService.getBiggestFoot(runnerRepository);
+        if (getBiggestFoot == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(getBiggestFoot.getRunnerName() + " has the biggest foot!");
+    }
+
+
     public static class LapTimeRequest {
         private int lapTimeSeconds;
 

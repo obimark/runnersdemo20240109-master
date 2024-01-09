@@ -28,4 +28,24 @@ public class RunnerService {
             return -1.0;
         }
     }
+
+    // Legnagyobb lábú futó lekérdezéséhez a metódus
+    public static RunnerEntity getBiggestFoot(RunnerRepository runnerRepository){
+        List<RunnerEntity> runners = runnerRepository.findAll();
+        if (runners.isEmpty()) {
+            return null;
+        }
+
+        RunnerEntity biggestShoeSize = runners.get(0);
+        for (RunnerEntity runner : runners) {
+            if (runner.getShoeSize() > biggestShoeSize.getShoeSize());
+            biggestShoeSize = runner;
+        }
+
+        return biggestShoeSize;
+    }
+
+
+
+
 }
