@@ -30,12 +30,13 @@
           <tr>
             <th>Lap Number</th>
             <th>Lap Time</th>
+            <th>Shoe Name</th>
           </tr>
           </thead>
           <tbody>
           <tr th:each="laptime : ${runner.laptimes}">
             <td align="right" th:text="${laptime.lapNumber}"></td>
-            <td align="right" th:text="${laptime.timeSeconds} + ' seconds'"></td>
+
           </tr>
           </tbody>
         </table>
