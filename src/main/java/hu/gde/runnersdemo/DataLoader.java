@@ -36,6 +36,7 @@ public class DataLoader implements CommandLineRunner {
         laptime2.setRunner(runnerEntity);
         lapTimeRepository.save(laptime2);
 
+        // Új cipő hozzáadása
         ShoeNameEntity shoe1 = new ShoeNameEntity();
         shoe1.setShoeName("Nike");
         shoe1.setShoeId(1);
@@ -63,6 +64,7 @@ public class DataLoader implements CommandLineRunner {
         laptime4.setRunner(runnerEntity2);
         lapTimeRepository.save(laptime4);
 
+        // Új cipő hozzáadása
         ShoeNameEntity shoe2 = new ShoeNameEntity();
         shoe2.setShoeName("Adidas");
         shoe2.setShoeId(2);
@@ -91,6 +93,7 @@ public class DataLoader implements CommandLineRunner {
         laptime6.setRunner(runnerEntity3);
         lapTimeRepository.save(laptime6);
 
+        // Új cipő hozzáadása
         ShoeNameEntity shoe3 = new ShoeNameEntity();
         shoe3.setShoeName("Kínai Nike");
         shoe3.setShoeId(3);
