@@ -21,6 +21,11 @@ public class RunnerController {
     public String getAllRunners(Model model) {
         List<RunnerEntity> runners = runnerRepository.findAll();
         model.addAttribute("runners", runners);
+
+        // Átlagsebesség meghívása
+        double averagePace = RunnerService.getAveragePace(runnerRepository);
+        model.addAttribute("averagePace", averagePace);
+
         return "runners";
     }
 
