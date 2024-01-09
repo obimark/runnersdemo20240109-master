@@ -1,18 +1,25 @@
 package hu.gde.runnersdemo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "shoename")
 public class ShoeNameEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long shoeId;
+    private Long shoeId;
     private String shoeName;
 
+    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "runner_id")
+    @JoinColumn(nullable = false)
     private RunnerEntity runner;
+
+    @Column(name = "shoename", nullable = false)
+    private int shoename;
+
 
     public long getShoeId() {
         return shoeId;

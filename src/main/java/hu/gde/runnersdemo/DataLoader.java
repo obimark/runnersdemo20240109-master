@@ -10,10 +10,13 @@ public class DataLoader implements CommandLineRunner {
     private final RunnerRepository runnerRepository;
     private final LapTimeRepository lapTimeRepository;
 
+    private final ShoeNameRepository shoeNameRepository;
+
     @Autowired
-    public DataLoader(RunnerRepository runnerRepository, LapTimeRepository lapTimeRepository) {
+    public DataLoader(RunnerRepository runnerRepository, LapTimeRepository lapTimeRepository, ShoeNameRepository shoeNameRepository) {
         this.runnerRepository = runnerRepository;
         this.lapTimeRepository = lapTimeRepository;
+        this.shoeNameRepository = shoeNameRepository;
     }
 
     @Override
@@ -41,7 +44,7 @@ public class DataLoader implements CommandLineRunner {
         shoe1.setShoeName("Nike");
         shoe1.setShoeId(1);
         shoe1.setRunner(runnerEntity);
-
+        shoeNameRepository.save(shoe1);
 
         runnerEntity.getLaptimes().add(laptime1);
         runnerEntity.getLaptimes().add(laptime2);
@@ -69,6 +72,7 @@ public class DataLoader implements CommandLineRunner {
         shoe2.setShoeName("Adidas");
         shoe2.setShoeId(2);
         shoe2.setRunner(runnerEntity);
+        shoeNameRepository.save(shoe2);
 
         runnerEntity2.getLaptimes().add(laptime3);
         runnerEntity2.getLaptimes().add(laptime4);
@@ -98,6 +102,7 @@ public class DataLoader implements CommandLineRunner {
         shoe3.setShoeName("Kínai Nike");
         shoe3.setShoeId(3);
         shoe3.setRunner(runnerEntity);
+        shoeNameRepository.save(shoe3);
 
         runnerEntity3.getLaptimes().add(laptime5);
         runnerEntity3.getLaptimes().add(laptime6);
