@@ -24,7 +24,6 @@ public class DataLoader implements CommandLineRunner {
         runnerEntity.setShoeSize(43);
         runnerRepository.save(runnerEntity);
 
-
         LapTimeEntity laptime1 = new LapTimeEntity();
         laptime1.setLapNumber(1);
         laptime1.setTimeSeconds(120);
@@ -36,6 +35,12 @@ public class DataLoader implements CommandLineRunner {
         laptime2.setTimeSeconds(110);
         laptime2.setRunner(runnerEntity);
         lapTimeRepository.save(laptime2);
+
+        ShoeNameEntity shoe1 = new ShoeNameEntity();
+        shoe1.setShoeName("Nike");
+        shoe1.setShoeId(1);
+        shoe1.setRunner(runnerEntity);
+
 
         runnerEntity.getLaptimes().add(laptime1);
         runnerEntity.getLaptimes().add(laptime2);
@@ -57,6 +62,11 @@ public class DataLoader implements CommandLineRunner {
         laptime4.setTimeSeconds(100);
         laptime4.setRunner(runnerEntity2);
         lapTimeRepository.save(laptime4);
+
+        ShoeNameEntity shoe2 = new ShoeNameEntity();
+        shoe2.setShoeName("Adidas");
+        shoe2.setShoeId(2);
+        shoe2.setRunner(runnerEntity);
 
         runnerEntity2.getLaptimes().add(laptime3);
         runnerEntity2.getLaptimes().add(laptime4);
@@ -80,6 +90,11 @@ public class DataLoader implements CommandLineRunner {
         laptime6.setTimeSeconds(120);
         laptime6.setRunner(runnerEntity3);
         lapTimeRepository.save(laptime6);
+
+        ShoeNameEntity shoe3 = new ShoeNameEntity();
+        shoe3.setShoeName("Kínai Nike");
+        shoe3.setShoeId(3);
+        shoe3.setRunner(runnerEntity);
 
         runnerEntity3.getLaptimes().add(laptime5);
         runnerEntity3.getLaptimes().add(laptime6);

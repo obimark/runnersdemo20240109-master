@@ -2,5 +2,5 @@ package hu.gde.runnersdemo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ShoeRepository extends JpaRepository<RunnerEntity,Long > {
+public interface ShoeNameRepository extends JpaRepository<RunnerEntity,Long > {
 }
