@@ -18,7 +18,7 @@ public class ShoeNameEntity {
     private RunnerEntity runner;
 
     @Column(name = "shoename", nullable = false)
-    private int shoename;
+    private String shoename;
 
 
     public long getShoeId() {
@@ -27,6 +27,10 @@ public class ShoeNameEntity {
 
     public String getShoeName() {
         return shoeName;
+    }
+
+    public RunnerEntity getRunner() {
+        return runner;
     }
     public void setRunner(RunnerEntity runner) {
         this.runner = runner;
