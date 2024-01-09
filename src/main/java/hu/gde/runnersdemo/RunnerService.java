@@ -46,6 +46,22 @@ public class RunnerService {
     }
 
 
+    // Átlagsebessség kiszámítása- metódus
+    public static double getAveragePace(RunnerRepository runnerRepository){
+        List<RunnerEntity> runners = runnerRepository.findAll();
+        if (runners.isEmpty()) {
+            return 0;
+        }
+
+        double totalPace = 0;
+        for (RunnerEntity runner : runners) {
+            totalPace +=runner.getPace();
+        }
+
+        return (double) totalPace / runners.size();
+    }
+
+
 
 
 }
