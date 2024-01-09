@@ -18,6 +18,8 @@ public class RunnerEntity {
     @OneToMany(mappedBy = "runner")
     private List<LapTimeEntity> laptimes = new ArrayList<>();
 
+    @OneToMany(mappedBy = "runner")
+    private List<ShoeNameEntity> shoes = new ArrayList<>();
 
     public RunnerEntity() {
     }

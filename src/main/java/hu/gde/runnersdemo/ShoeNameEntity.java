@@ -3,7 +3,7 @@ package hu.gde.runnersdemo;
 import jakarta.persistence.*;
 
 @Entity
-public class ShoeName {
+public class ShoeNameEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
